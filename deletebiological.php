@@ -179,6 +179,7 @@
 	echo "</div>";
 
 	echo "<input type=\"hidden\" name = \"table\" value = \"biological\">";
+	echo "<input type=\"hidden\" name = \"todo\" value = '$showhide'>";
 	echo "<br>";
 	echo "<input type=\"submit\" name=\"submit\" Value=\"Submit\"/>";
 	echo "</form>";
