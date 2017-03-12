@@ -123,7 +123,7 @@
                 <thead><tr><th></th></tr></thead>
                 <tbody align="right">
                     <tr><td>ID:</td><td><input type="text" Value=<?php echo $BID ?> name="BID"></td></tr>
-                    <tr><td>Station Name:</td><td><input type="text" Value=<?php echo $Bstationname ?> name="Bstationname"></td></tr>
+                    <tr><td>Station Name:</td><td><?php echo $Bstationname ?></td></tr>
                     <tr><td>Minimum stratum:</td><td><input type="text" Value=<?php echo $Bstratummin ?> name="Bstratummin"></td></tr>
                     <tr><td>Maximum stratum:</td><td><input type="text" Value=<?php echo $Bstratummax ?> name="Bstratummax"></td></tr>
                     <tr><td>Bx:</td><td><input type="text" Value=<?php echo $Bx ?> name="Bx"></td></tr>

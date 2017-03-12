@@ -26,12 +26,11 @@
 	
 	
 $PID=$_POST['PID'];
-$Pstationname=$_POST['Pstationname'];
+//$Pstationname=$_POST['Pstationname'];
 $Pdepth=$_POST['Pdepth'];
 $Ptemperature=$_POST['Ptemperature'];
 $Psalinity=$_POST['Psalinity'];
 $Poxygen=$_POST['Poxygen'];
-$Pstationname=$_POST['Pstationname'];
 $Pfluorescence=$_POST['Pfluorescence'];
 	
 $servername = "localhost";
@@ -49,7 +48,7 @@ if (!$conn) {
 }
 	
 	$sql = "UPDATE $thetable 
-	SET Pstationname='$Pstationname', Pdepth=$Pdepth,Ptemperature=$Ptemperature,Psalinity=$Psalinity,Poxygen=$Poxygen,Pfluorescence=$Pfluorescence  
+	SET Pdepth=$Pdepth,Ptemperature=$Ptemperature,Psalinity=$Psalinity,Poxygen=$Poxygen,Pfluorescence=$Pfluorescence  
 	WHERE PID=$PID";
 
 if (mysqli_query($conn, $sql)) {

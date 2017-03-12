@@ -26,7 +26,7 @@
 	
 	
 $BID=$_POST['BID'];
-$Bstationname=$_POST['Bstationname'];
+//$Bstationname=$_POST['Bstationname'];
 $Bstratummin=$_POST['Bstratummin'];
 $Bstratummax=$_POST['Bstratummax'];
 $Bx=$_POST['Bx'];
@@ -51,7 +51,7 @@ if (!$conn) {
 }
 	
 	$sql = "UPDATE $thetable 
-	SET Bstationname='$Bstationname', Bstratummin=$Bstratummin,Bstratummax=$Bstratummax,Bx=$Bx,B_y=$B_y,Blarvastage='$Blarvastage',Bspecies='$Bspecies',Babundance=$Babundance   
+	SET Bstratummin=$Bstratummin,Bstratummax=$Bstratummax,Bx=$Bx,B_y=$B_y,Blarvastage='$Blarvastage',Bspecies='$Bspecies',Babundance=$Babundance   
 	WHERE BID=$BID";
 	
 if (mysqli_query($conn, $sql)) {

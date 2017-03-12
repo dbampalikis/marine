@@ -100,7 +100,7 @@
                 <thead><tr><th></th></tr></thead>
                 <tbody align="right">
                     <tr><td>ID:</td><td><input type="text" Value=<?php echo $pid ?> name="PID"></td></tr>
-                    <tr><td>Station Name:</td><td><input type="text" Value=<?php echo $pstationname ?> name="Pstationname"></td></tr>
+					<tr><td>Station Name:</td><td><?php echo $pstationname ?></td></tr>
                     <tr><td>Depth:</td><td><input type="text" Value=<?php echo $pdepth ?> name="Pdepth"></td></tr>
                     <tr><td>Temperature:</td><td><input type="text" Value=<?php echo $ptemperature ?> name="Ptemperature"></td></tr>
                     <tr><td>Salinity:</td><td><input type="text" Value=<?php echo $psalinity ?> name="Psalinity"></td></tr>
