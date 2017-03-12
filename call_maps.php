@@ -7,12 +7,8 @@ $node = $dom->createElement("markers");
 $parnode = $dom->appendChild($node);
 
 // Opens a connection to a MySQL server
-$servername = "localhost";
-$username = "root";
-$password = "LIMS.2017.Uppsala";
-$dbname = "marine";
+include 'db.php';
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check connection
 if (!$conn) {
@@ -21,7 +17,7 @@ if (!$conn) {
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM stations";
+$query = "SELECT * FROM Stations where Shidden = 0";
 $result = mysqli_query($conn, $query);
 if (!$result) {
   die('Invalid query: ' . mysqli_error());
@@ -44,5 +40,7 @@ while ($row = mysqli_fetch_assoc($result)){
 }
 
 echo $dom->saveXML();
+
+include 'closeDB.php'; 
 
 ?>
