@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Show or hide</title>
+        <title>Select</title>
         <meta name="description" content="">
         <meta name="author" content="">
     </head>
@@ -13,11 +13,21 @@
 <div class="container">  
 	<div class="text-center">
 		<h1>Marine</h1>
-		<p class="lead">Data to hide or show. The selected rows will be flagged as hidden = 1 and will not be shown at the page download.php</p>
 	</div>
-	<b>Station data</b>
+
+
+
+<p class="lead">Data to hide or show. Originally, all entires have flag = 0, which means they are shown. Entries hidden have flag = 1.<br></p>
+	<b>Station data</b><br>
+		<br>
+<ul>Hiding or showing a station. Any station that changes its visibility flag value from visible to unvisible (0 to 1) or from unvisible to visible (1 to 0), will also be hidden from physical and biological tables. 
+<li>Choose the stations</li>
+<li>Choose the action to do</li>
+<li>Click submit</li>
+<li>In the next page: check the boxes of the entires you would like to change</li>
+<li>Click submit</li>
+</ul>
 <br>
-Any changes done in under Station will affect tables Physical and Biological as well. <br>
 	<form action="deletebiological.php" method="post">
 		Choose station:
 		<select class="selectpicker" multiple data-actions-box="true" name = station_list[]>
@@ -36,11 +46,9 @@ Any changes done in under Station will affect tables Physical and Biological as 
 		Hide or show: <select class="selectpicker"  name = "station_to_hide">
 						<option selected name ="station_to_hide" value ="0"> HIDE</option>
 						<option name ="station_to_hide" value ="1"> SHOW</option>
-						<input type="hidden" name = "table" value = "station">
 		</select>
-
+						<input type="hidden" name = "table" value = "station">
 		<br>
-		
 		<input type="submit" name="submit" Value="Submit"/>
 		</form>
 
@@ -49,7 +57,15 @@ Any changes done in under Station will affect tables Physical and Biological as 
 
 	<b>Physical data</b>
 <br>
-	You can only hide and show elements that are visible (flagged 0 at hidden column) at Station level.<br>
+<ul>Hiding or showing an entry from physical data. This form will only affect the visibility of physical variables. 
+<li>Choose the stations</li>
+<li>Choose the depths you want to change</li>
+<li>Choose the action to do</li>
+<li>Click submit</li>
+<li>In the next page: check the boxes of the entires you would like to change</li>
+<li>Click submit</li>
+</ul>
+<br>
 	<form action="deletebiological.php" method="post">
 		Choose station: <select class="selectpicker" multiple data-actions-box="true"  name = station_forphysical[] id="station">
 			<?php 
@@ -81,9 +97,8 @@ Any changes done in under Station will affect tables Physical and Biological as 
 		Hide or show:  <select class="selectpicker"  name = "physical_to_hide">
 						<option selected name ="physical_to_hide" value ="0"> HIDE</option>
 						<option name ="physical_to_hide" value ="1"> SHOW</option>
-						<input type="hidden" name = "table" value = "physical">
 		</select>
-
+						<input type="hidden" name = "table" value = "physical">
 		<br>
 		<input type="submit" name="submit"  Value="Submit"/>
 		</form>
@@ -92,7 +107,16 @@ Any changes done in under Station will affect tables Physical and Biological as 
 <br>
 	<b>Biological variables:</b> 
 <br>			
-	You can only hide and show elements that are visible (flagged 0 at hidden column) at Station level.<br>
+<br>
+<ul>Hiding or showing an entry from biological data. This form will only affect the visibility of biological variables.
+<li>Choose the stations</li>
+<li>Choose the stratum, larval stage and species you want to change</li>
+<li>Choose the action to do</li>
+<li>Click submit</li>
+<li>In the next page: check the boxes of the entires you would like to change</li>
+<li>Click submit</li>
+</ul>
+<br>
 	<form action="deletebiological.php" method="post">
 		Choose station: <select class="selectpicker" multiple data-actions-box="true" name = station_forbiological[]>
 			<?php 
@@ -150,10 +174,10 @@ Any changes done in under Station will affect tables Physical and Biological as 
 		Hide or show: <select class="selectpicker"  name = "biological_to_hide">
 						<option selected name ="biological_to_hide" value ="0"> HIDE</option>
 						<option name ="biological_to_hide" value ="1"> SHOW</option>
-						<input type="hidden" name = "table" value = "biological">
 		</select>
 
 		<br>
+		<input type="hidden" name = "table" value = "biological">
 		<input type="submit" name="submit"  Value="Submit"/>
 		</form>
 

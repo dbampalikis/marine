@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Download</title>
+        <title>Insert data</title>
         <meta name="description" content="">
         <meta name="author" content="">
     </head>
@@ -17,13 +17,15 @@
     <h1>New Station data</h1>
     <br>
 	<form action="insert.php" method="post">
-		Station name: <input type="text" name="Sname"><br>
-		Station sequence: <input type="text" name="Ssequence"><br>
-		Station longitude: <input type="text" name="Slongitude"><br>
-		Station latitude: <input type="text" name="Slatitude"><br>
-		
-		<input type="Submit">
-	</form>
+                <table class="table-condensed" align="center">
+                    <thead><tr><th></th></tr></thead>
+                    <tbody align="right"><tr><td>Station Name:</td><td><input type="text" name="Sname"></td></tr>
+                    <tr><td>Station Sequence:</td><td><input type="text" name="Ssequence"></td></tr>
+                    <tr><td>Station Longitude:</td><td><input type="text" name="Slongitude"></td></tr>
+                    <tr><td>Station Latitude:</td><td><input type="text" name="Slatitude"></td></tr></tbody>
+                </table>
+                <input type="submit" name="submit"  Value="Submit"/>
+            </form>
   </div>
   
 </div><!-- /.container -->
@@ -34,27 +36,30 @@
     <h1>New Biological data</h1>
     <br>
 	<form action="insert2.php" method="post">
-		Choose station: <select class="selectpicker" multiple data-actions-box="false" name = station_forbiological[]>
+            Choose station:  <select class="selectpicker" multiple data-actions-box="false" name = station_forbiological[]>
 			<?php 
 				include 'db.php'; //establish database connection script
-				$result = $conn->query("SELECT DISTINCT Bstationname FROM Biological ORDER BY Bstationname");
+				$result = $conn->query("SELECT DISTINCT Sname FROM Stations ORDER BY Sname");
 				while($row = $result->fetch_assoc()) {
-					$station = htmlentities($row['Bstationname']); 
-					print "<option selected name =\"station_forbiological[] \" value = \"" . $station . "\">" . $station . "</option>"; 
+					$station = htmlentities($row['Sname']); 
+					print "<option deselected name =\"station_forbiological[] \" value = \"" . $station . "\">" . $station . "</option>"; 
 				} 
 				include 'closeDB.php';  //close database connection script
 			?>
-		</select><br>
-		Biological stratum min: <input type="text" name="Bstratummin"><br>
-		Biological stratum max: <input type="text" name="Bstratummax"><br>
-		Bx: <input type="text" name="Bx"><br>
-		B_y: <input type="text" name="B_y"><br>
-		Biological larva stage: <input type="text" name="Blarvastage"><br>
-		Biological species: <input type="text" name="Bspecies"><br>
-		Biological abundance: <input type="text" name="Babundance"><br>
-		
-		
-		<input type="Submit">
+                    </select><br>
+            <table class="table-condensed" align="center">
+                <thead><tr><th></th></tr></thead>
+                <tbody align="right">
+                    <tr><td>Biological stratum min:</td><td><input type="text" name="Bstratummin"></td></tr>
+                    <tr><td>Biological stratum max:</td><td><input type="text" name="Bstratummax"></td></tr>
+                    <tr><td>Bx:</td><td><input type="text" name="Bx"></td></tr>
+                    <tr><td>By:</td><td><input type="text" name="B_y"></td></tr>
+                    <tr><td>Biological larva stage:</td><td><input type="text" name="Blarvastage"></td></tr>
+                    <tr><td>Biological species:</td><td><input type="text" name="Bspecies"></td></tr>
+                    <tr><td>Biological abundance:</td><td><input type="text" name="Babundance"></td></tr>
+                </tbody>
+            </table>
+            <input type="submit" name="submit"  Value="Submit"/>
 	</form>
   </div>
   
@@ -66,27 +71,29 @@
     <h1>New Physical data</h1>
     <br>
 	<form action="insert3.php" method="post">
-
-				Choose station: <select class="selectpicker" multiple data-actions-box="false"  name = station_forphysical[] id="station">
+            Choose station:  <select class="selectpicker" multiple data-actions-box="false"  name = station_forphysical[] id="station">
 			<?php 
 				include 'db.php'; //establish database connection script
-				$result = $conn->query("SELECT DISTINCT(Pstationname) AS Pstationname FROM Physical ORDER BY Pstationname");
+				$result = $conn->query("SELECT DISTINCT Sname FROM Stations ORDER BY Sname");
 				while($row = $result->fetch_assoc()) {
-					$station = htmlentities($row['Pstationname']); 
-					print "<option selected name =\"station_forphysical[] \" value = \"" . $station . "\">" . $station . "</option>"; 
+					$station = htmlentities($row['Sname']); 
+					print "<option deselected name =\"station_forphysical[] \" value = \"" . $station . "\">" . $station . "</option>"; 
 				} 
 				include 'closeDB.php';  //close database connection script
 			?>
 		</select>
 		<br>
-		Physical depth: <input type="text" name="Pdepth"><br>
-		Physical temperature: <input type="text" name="Ptemperature"><br>
-		Physical salinity: <input type="text" name="Psalinity"><br>
-		Physical oxygen: <input type="text" name="Poxygen"><br>
-		Physical fluorescence: <input type="text" name="Pfluorescence"><br>
-		
-		
-		<input type="Submit">
+                <table class="table-condensed" align="center">
+                <thead><tr><th></th></tr></thead>
+                <tbody align="right">
+                    <tr><td>Physical depth:</td><td><input type="text" name="Pdepth"></td></tr>
+                    <tr><td>Physical temperature:</td><td><input type="text" name="Ptemperature"></td></tr>
+                    <tr><td>Physical salinity:</td><td><input type="text" name="Psalinity"></td></tr>
+                    <tr><td>Physical oxygen:</td><td><input type="text" name="Poxygen"></td></tr>
+                    <tr><td>Physical fluorescence:</td><td><input type="text" name="Pfluorescence"></td></tr>
+                </tbody>
+            </table>
+            <input type="submit" name="submit"  Value="Submit"/>
 	</form>
   </div>
   

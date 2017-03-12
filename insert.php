@@ -15,8 +15,8 @@
     $servername = "localhost";
     $username="root";
     $password="LIMS.2017.Uppsala";
-    $dbname = "marine";
-    $thetable="stations";
+    $dbname = "Marine";
+    $thetable="Stations";
 
     $Sname=$_POST['Sname'];
     $Ssequence=$_POST['Ssequence'];

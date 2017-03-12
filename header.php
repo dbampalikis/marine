@@ -36,16 +36,19 @@
       <li class="active"><a href="home.php">Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Tools <span class="caret"></span></a>
         <ul class="dropdown-menu">
+          <li><a href="compare_main.php">Compare stations</a></li>
           <li><a href="download.php">View data</a></li>
         </ul>
       </li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="insertdataform3.php">Insert data</a></li>
+          <li><a href="updateform.php">Update data</a></li>
           <li><a href="delete_main.php">Select data</a></li>
         </ul>
       </li>
       <li><a href="map.php">Map</a></li>
+      <li><a href="index.html">Logout</a></li>
     </ul>
   </div>
 </nav>

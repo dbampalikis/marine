@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Entries flagged to be shown or multiple data-actions-box=\"true\"</title>
+        <title>Hide-show</title>
         <meta name="description" content="">
         <meta name="author" content="">
     </head>
@@ -31,7 +31,7 @@
 
 				$sql = "UPDATE Stations
 				SET Shidden = 1-'$showhide'
-				WHERE SID IN ('" . implode("','", $id) ."') 
+				WHERE Sname IN ('" . implode("','", $id) ."') 
 				;
 				";
 
@@ -45,7 +45,7 @@
 
 				$sql = "UPDATE Physical
 				SET Phidden = 1-'$showhide'
-				WHERE PID IN ('" . implode("','", $id) ."') 
+				WHERE Pstationname IN ('" . implode("','", $id) ."') 
 				;
 				";
 
@@ -59,7 +59,7 @@
 
 				$sql = "UPDATE Biological
 				SET Bhidden = 1-'$showhide'
-				WHERE BID IN ('" . implode("','", $id) ."') 
+				WHERE Bstationname IN ('" . implode("','", $id) ."') 
 				;
 				";
 

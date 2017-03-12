@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Display selected data</title>
+    <title>Download</title>
     <meta name="description" content="">
     <meta name="author" content="">
   </head>
@@ -17,9 +17,9 @@
     <h1>Marine</h1>
     <p class="lead">Selected data</p>
   </div>
-</div>
-
-<div class="container">
+<ul>
+<li>Click on download to obtain the data in csv form </li>
+</ul>
 
 	<?php
 		if(isset($_POST['submit'])){
@@ -29,7 +29,7 @@
 				// Counting number of checked checkboxes.
 				$checked_count = count($_POST['station_list']);
 				echo "<p>";
-				echo "You have selected following stations ".$checked_count." option(s): <br/>";
+				echo "You have selected following station(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['station_list'] as $selected) {
 					echo " - ".$selected . "";
@@ -78,7 +78,7 @@
 				// Counting number of checked checkboxes.
 				$checked_count = count($_POST['station_forphysical']);
 				echo "<p>";
-				echo "You have selected following stations ".$checked_count." option(s): <br/>";
+				echo "You have selected following station(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['station_forphysical'] as $selected) {
 					echo " - ".$selected . "";
@@ -86,7 +86,7 @@
 					echo "</p>";
 				$checked_count = count($_POST['depth_physical']);
 				echo "<p>";
-				echo "You have selected following depths ".$checked_count." option(s): <br/>";
+				echo "You have selected following depth(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['depth_physical'] as $selected) {
 					echo " - ".$selected . "";
@@ -140,7 +140,7 @@
 				// Counting number of checked checkboxes.
 				$checked_count = count($_POST['station_forbiological']);
 				echo "<p>";
-				echo "You have selected following stations ".$checked_count." option(s): <br/>";
+				echo "You have selected following station(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['station_forbiological'] as $selected) {
 					echo " - ".$selected . "";
@@ -148,7 +148,7 @@
 					echo "</p>";
 				$checked_count = count($_POST['biological_stratummax']);
 				echo "<p>";
-				echo "You have selected following stratum ".$checked_count." option(s): <br/>";
+				echo "You have selected following stratum(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['biological_stratummax'] as $selected) {
 					echo " - ".$selected . "";
@@ -157,7 +157,7 @@
 
 				$checked_count = count($_POST['biological_larval']);
 				echo "<p>";
-				echo "You have selected following larvae ".$checked_count." option(s): <br/>";
+				echo "You have selected following larval stage(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['biological_larval'] as $selected) {
 					echo " - ".$selected . "";
@@ -166,7 +166,7 @@
 
 				$checked_count = count($_POST['biological_species']);
 				echo "<p>";
-				echo "You have selected following species ".$checked_count." option(s): <br/>";
+				echo "You have selected following specie(s): <br/>";
 				// Loop to store and display values of individual checked checkbox.
 				foreach($_POST['biological_species'] as $selected) {
 					echo " - ".$selected . "";

@@ -16,7 +16,7 @@
     $username="root";
 
     $password="LIMS.2017.Uppsala";
-    $dbname = "marine";
+    $dbname = "Marine";
     $thetable="Biological";
 
     //$Bstationname=$_POST['Bstationname'];

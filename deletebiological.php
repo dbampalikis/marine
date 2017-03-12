@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Entries to show or hide</title>
+        <title>Select</title>
         <meta name="description" content="">
         <meta name="author" content="">
     </head>
@@ -16,9 +16,12 @@
     <h1>Marine</h1>
     <p class="lead">Entries to show or hide.</p>
   </div>
-</div>
 
-<div class="container">
+<ul>
+<li>Check the boxes of the entires you would like to change </li>
+<li>Click submit</li>
+</ul>
+
 
 	<?php
 		if(isset($_POST['submit'])){
@@ -28,7 +31,6 @@
 				include("db.php");
 				$name = $_POST['station_list'];
 				$showhide = $_POST['station_to_hide'];
-				print($showhide);
 				$sql = "SELECT * FROM Stations
 				WHERE Sname IN ('" . implode("','", $name) ."') AND Shidden = '$showhide'
 				;
@@ -39,7 +41,6 @@
 				$num = mysqli_num_rows($result);
 
 	echo "<form action=\"Hidden_elements.php \" method=\"post\">";
-	echo "Choose ID to change hidden value:";
 	echo	"<div class=\"checkbox\"  name = station_hide[]>";
 					echo "<table class=\"table\" id=\"datatable\">";
 					echo "<thead>";
@@ -47,7 +48,7 @@
 					echo "</thead>";
 					echo "<tbody>";
 				    while($row = mysqli_fetch_assoc($result)) {
-						echo "<tr><td><input type=\"checkbox\" name =\"station_hide[]\" value =" .$row['SID'] . "></td>";
+						echo "<tr><td><input type=\"checkbox\" name =\"station_hide[]\" value =" .$row['Sname'] . "></td>";
 				        echo "<td>" . $row["Shidden"]."</td>";
 				        echo "<td>" . $row["SID"]."</td>";
 				        echo "<td>" . $row["Sname"]."</td>";
@@ -179,6 +180,7 @@
 	echo "</div>";
 
 	echo "<input type=\"hidden\" name = \"table\" value = \"biological\">";
+	echo "<input type=\"hidden\" name = \"todo\" value = '$showhide'>";
 	echo "<br>";
 	echo "<input type=\"submit\" name=\"submit\" Value=\"Submit\"/>";
 	echo "</form>";
